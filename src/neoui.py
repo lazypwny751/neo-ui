@@ -1,9 +1,8 @@
-import gi, time, datetime, psutil, sys, threading
-gi.require_version('Gtk','3.0')
-from get_data import *
-from gi.repository import Gtk
+#!/usr/bin/env python3
 
-#Window
+import gi, sys, os
+gi.require_version('Gtk', '4.0')
+from gi.repository import Gtk
 
 class Main:
     def __init__(self):
@@ -50,6 +49,9 @@ class Main:
         t1 = threading.Thread(target=uptime)
         t1.start()
         Gtk.main()
+    
+    def fetch_sys():
+        os.system("bash pfetch.sh")
 
 if __name__ == "__main__":
-    Main()
+    Main.fetch_sys()
