@@ -5,7 +5,7 @@
 set -e
 
 check:requirements() {
-    local _require_=("cut" "cut" "grep" "wc" "tr" "awk") # <- "tr" as bayrakları as as cCc
+    local _require_=("cut" "grep" "wc" "tr" "awk") # <- "tr" as bayrakları as as cCc
     local status="true"
     for cmd in "${_require_[@]}" ; do
         if ! command -v "${cmd}" &> /dev/null ; then
